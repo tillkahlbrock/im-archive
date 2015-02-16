@@ -15,6 +15,6 @@ class IMASpider(CrawlSpider):
 
     def parse_episode(self, response):
         episode = Episode()
-        episode['name'] = response.xpath('//title/text()').extract()[0]
+        episode['name'] = response.xpath('//h2/text()').extract()[0]
         episode['file'] = response.css('a[href*=mp3]::attr(href)').extract()[0]
         return episode
