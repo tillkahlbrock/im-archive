@@ -1,3 +1,3 @@
 function (doc) {
-  emit(doc.name, doc.file);
+  emit(doc._id, { "title": doc.name, "file_name": doc.file });
 }
